@@ -53,6 +53,11 @@
                 return;
             }
 
+            if (new Date(arrivalDate) > new Date(departureDate)) {
+                alert('Išvykimo data turi būti vėlesnė nei atvykimo data.');
+                return;
+            }
+
             fetch('{{ route("reservations.checkAvailability") }}', {
                 method: 'POST',
                 headers: {
