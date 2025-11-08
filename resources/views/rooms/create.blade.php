@@ -3,7 +3,7 @@
 @section('title', 'Kurti kambarį')
 
 @section('content')
-    <h1>Kurti naują kambarį</h1>
+    <h1 style="font-size: 2.5rem; font-weight: bold">Kurti naują kambarį</h1>
 
     <div class="card">
         <form method="POST" action="{{ route('rooms.store') }}">

@@ -3,7 +3,7 @@
 @section('title', 'Kambario detalės')
 
 @section('content')
-    <h1>Kambarys {{ $room->room_number }}</h1>
+    <h1 style="font-size: 2.5rem; font-weight: bold">Kambarys {{ $room->room_number }}</h1>
 
     <div class="card">
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">

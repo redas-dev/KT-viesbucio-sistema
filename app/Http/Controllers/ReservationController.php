@@ -118,7 +118,7 @@ class ReservationController extends Controller
             'arrival_date' => 'required|date',
             'departure_date' => 'required|date|after:arrival_date',
             'total_price' => 'required|numeric|min:0',
-            'reservation_status' => 'required|in:active,cancelled,completed',
+            'reservation_status' => 'required|in:aktyvi,atšaukta,baigta',
         ]);
 
         $reservation->update([
@@ -150,7 +150,7 @@ class ReservationController extends Controller
      */
     public function cancel(Reservation $reservation)
     {
-        if (auth()->user()->id !== $reservation->user_id && auth()->user()->hasRole('admin')) {
+        if (auth()->user()->id !== $reservation->user_id && !auth()->user()->hasRole('admin')) {
             abort(403);
         }
 

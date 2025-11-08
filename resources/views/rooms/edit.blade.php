@@ -3,7 +3,7 @@
 @section('title', 'Redaguoti kambarį')
 
 @section('content')
-    <h1>Redaguoti kambarį {{ $room->room_number }}</h1>
+    <h1 style="font-size: 2.5rem; font-weight: bold">Redaguoti kambarį {{ $room->room_number }}</h1>
 
     <div class="card">
         <form method="POST" action="{{ route('rooms.update', $room) }}">

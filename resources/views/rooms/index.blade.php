@@ -4,7 +4,7 @@
 
 @section('content')
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
-        <h1>Kambarių peržiūra</h1>
+        <h1 style="font-size: 2.5rem; font-weight: bold">Kambarių peržiūra</h1>
         <a href="{{ route('rooms.create') }}" class="btn btn-primary">+ Pridėti naują kambarį</a>
     </div>
 
