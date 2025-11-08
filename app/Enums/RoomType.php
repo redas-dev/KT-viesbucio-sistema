@@ -3,7 +3,7 @@
 namespace App\Enums;
 enum RoomType: string
 {
-    case Single = 'single';
-    case Double = 'double';
-    case Tripple = 'triple';
+    case Single = 'vienvietis';
+    case Double = 'dvivietis';
+    case Tripple = 'trivietis';
 }

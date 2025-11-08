@@ -23,16 +23,6 @@
 
             <x-spacer />
 
-            <x-navlist>
-                <x-navlist.item before="phosphor-git-pull-request" href="https://github.com/imacrayon/blade-starter-kit" target="_blank">
-                {{ __('Repository') }}
-                </x-navlist.item>
-
-                <x-navlist.item before="phosphor-book-open-text" href="https://laravel.com/docs/starter-kits" target="_blank">
-                {{ __('Documentation') }}
-                </x-navlist.item>
-            </x-navlist>
-
             <x-popover align="bottom" justify="left">
                 <button type="button" class="w-full group flex items-center rounded-lg p-1 hover:bg-gray-800/5 dark:hover:bg-white/10">
                     <span class="shrink-0 size-8 bg-gray-200 rounded-sm overflow-hidden dark:bg-gray-700">

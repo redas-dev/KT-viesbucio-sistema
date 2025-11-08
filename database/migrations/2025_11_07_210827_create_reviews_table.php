@@ -16,7 +16,7 @@ return new class extends Migration
             $table->date('review_date');
             $table->integer('rating');
             $table->text('comment')->nullable();
-            $table->foreignId('fk_user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

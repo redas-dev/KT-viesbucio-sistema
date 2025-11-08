@@ -18,8 +18,8 @@ return new class extends Migration
             $table->date('departure_date');
             $table->double('total_price', 8, 2);
             $table->enum('reservation_status', array_column(ReservationStatus::cases(), 'value'))->default(ReservationStatus::Active->value);
-            $table->foreignId('fk_user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('fk_room_id')->constrained('rooms')->onDelete('cascade');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('room_id')->constrained('rooms')->onDelete('cascade');
             $table->timestamps();
         });
     }

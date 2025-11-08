@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\ReservationStatus;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -22,13 +23,13 @@ class Room extends Model
 
     public function reservations()
     {
-        return $this->hasMany(Reservation::class, 'fk_room_id');
+        return $this->hasMany(Reservation::class);
     }
 
     public function isAvailable($arrival_date, $departure_date)
     {
         $conflicts = $this->reservations()
-            ->where('reservation_status', 'active')
+            ->where('reservation_status', ReservationStatus::Active->value)
             ->where(function ($query) use ($arrival_date, $departure_date) {
                 $query->whereBetween('arrival_data', [$arrival_date, $departure_date])
                     ->orWhereBetween('departure_data', [$arrival_date, $departure_date])

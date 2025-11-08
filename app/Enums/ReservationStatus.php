@@ -4,7 +4,7 @@ namespace App\Enums;
 
 enum ReservationStatus: string
 {
-    case Active = 'active';
-    case Cancelled = 'cancelled';
-    case Completed = 'completed';
+    case Active = 'aktyvi';
+    case Cancelled = 'atšaukta';
+    case Completed = 'baigta';
 }

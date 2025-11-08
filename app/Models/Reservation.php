@@ -16,7 +16,9 @@ class Reservation extends Model
         'arrival_date',
         'departure_date',
         'total_price',
-        'reservation_status'
+        'reservation_status',
+        'user_id',
+        'room_id',
     ];
 
     protected $casts = [
@@ -26,17 +28,17 @@ class Reservation extends Model
 
     public function User(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'fk_user_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function Room(): BelongsTo
     {
-        return $this->belongsTo(Room::class, 'fk_room_id');
+        return $this->belongsTo(Room::class, 'room_id');
     }
 
     public function calculateTotalPrice()
     {
-        $days = $this->arrival_date->diffInDays($this->departure_date);
+        $days = abs($this->arrival_date->diffInDays($this->departure_date));
         return $days * $this->room->price_per_night;
     }
 }

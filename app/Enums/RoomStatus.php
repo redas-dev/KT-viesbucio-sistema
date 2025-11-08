@@ -4,6 +4,6 @@ namespace App\Enums;
 
 enum RoomStatus: string
 {
-    case Available = 'available';
-    case Occupied = 'occupied';
+    case Available = 'laisvas';
+    case Occupied = 'užimtas';
 }
