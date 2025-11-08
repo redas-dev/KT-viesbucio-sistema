@@ -48,7 +48,7 @@
                         <td>{{ $reservation->departure_date->format('Y-m-d') }}</td>
                         <td>€{{ number_format($reservation->total_price, 2) }}</td>
                         <td>
-                            <span style="padding: 0.25rem 0.75rem; border-radius: 4px; background: {{ $reservation->reservation_status === 'active' ? '#d4edda' : ($reservation->reservation_status === 'cancelled' ? '#f8d7da' : '#d1ecf1') }}; color: {{ $reservation->reservation_status === 'active' ? '#155724' : ($reservation->reservation_status === 'cancelled' ? '#721c24' : '#0c5460') }};">
+                            <span style="padding: 0.25rem 0.75rem; border-radius: 4px; background: {{ $reservation->reservation_status === 'aktyvi' ? '#d4edda' : ($reservation->reservation_status === 'cancelled' ? '#f8d7da' : '#d1ecf1') }}; color: {{ $reservation->reservation_status === 'aktyvi' ? '#155724' : ($reservation->reservation_status === 'atšaukta' ? '#721c24' : '#0c5460') }};">
                                 {{ ucfirst($reservation->reservation_status) }}
                             </span>
                         </td>
