@@ -4,8 +4,9 @@
 
 @section('content')
     <div style="text-align: center; padding: 3rem 0;">
-        <h1 style="font-size: 3rem; color: #667eea; margin-bottom: 1rem; font-weight: bold;">Sveiki atvykę į Redas Domkus IFF-3/2 Viešbutį</h1>
+        <h1 style="font-size: 3rem; color: #667eea; margin-bottom: 1rem; font-weight: bold;">Sveiki atvykę į Viešbutį</h1>
         <p style="font-size: 1.2rem; color: #666; margin-bottom: 2rem;">Atraskite geriausius kambarius pagal savo norus</p>
+        <p style="color: #666; margin-bottom: 2rem; font-weight: bold">Autorius: Redas Domkus IFF-3/2</p>
 
         @auth
             <a href="{{ route('dashboard') }}" class="btn btn-primary" style="font-size: 1.1rem;">Informacija</a>
@@ -16,7 +17,7 @@
     </div>
 
     <div class="card">
-        <h2>Patikrink laisvus kambarius</h2>
+        <h2 style="font-size: 2.5rem; font-weight: bold; text-align: center">Patikrink laisvus kambarius</h2>
         <div class="form-group">
             <label for="room_type">Kambario tipas:</label>
             <select id="room_type">
@@ -37,9 +38,10 @@
         <div id="availability-result" style="margin-top: 1rem;"></div>
     </div>
 
-    <div class="card">
-        <h2>Naujausi atsiliepimai</h2>
+    <div class="flex flex-col justify-center items-center card">
+        <h2 style="font-size: 2.5rem; font-weight: bold; text-align: center">Naujausi atsiliepimai</h2>
         <div id="reviews-list"></div>
+        <a href="{{route('reviews.index')}}" class="btn btn-primary max-w-fit" style="margin-top: 1rem; ">Peržiūrėti visus atsiliepimus</a>
     </div>
 
     <script>
