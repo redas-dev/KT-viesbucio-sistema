@@ -14,6 +14,7 @@ class ReviewFactory extends Factory
             'rating' => $this->faker->numberBetween(1, 5),
             'comment' => $this->faker->paragraph(),
             'user_id' => User::factory(),
+            'username' => rand(0, 5) == 0 ? null : $this->faker->userName(),
         ];
     }
 }

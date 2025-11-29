@@ -8,7 +8,10 @@
     <div class="card">
         <form method="POST" action="{{ route('reviews.store') }}">
             @csrf
-
+            <div class="form-group">
+                <label for="username">Slapyvardis (nebūtinas)</label>
+                <input id="username" name="username" placeholder="Tavo slapyvardis" value="{{ old('comment') }}"/>
+            </div>
             <div class="form-group">
                 <label for="rating">Įvertinimas (1-5 žvaigždučių):</label>
                 <div style="display: flex; gap: 1rem; font-size: 2rem; margin-bottom: 1rem;">

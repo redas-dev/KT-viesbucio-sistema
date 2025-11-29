@@ -40,6 +40,7 @@ class ReviewController extends Controller
         $validated = $request->validate([
             'rating' => 'required|integer|min:1|max:5',
             'comment' => 'nullable|string|max:1000',
+            'username' => 'nullable|string|max:255',
         ]);
 
         Review::create([
@@ -47,6 +48,7 @@ class ReviewController extends Controller
             'comment' => $validated['comment'],
             'review_date' => now()->toDateString(),
             'user_id' => auth()->user()->id,
+            'username' => $validated['username'],
         ]);
 
         return redirect()->route('reviews.index')->with('success', 'Atsiliepimas pateiktas sėkmingai');
@@ -62,7 +64,7 @@ class ReviewController extends Controller
             ->get()
             ->map(fn($review) => [
                 'id' => $review->id,
-                'user_name' => $review->user->name . ' ' . $review->user->surname,
+                'user_name' => $review->username == null ? $review->user->name . ' ' . $review->user->surname : $review->username,
                 'rating' => $review->rating,
                 'comment' => $review->comment,
                 'review_date' => $review->review_date->format('Y-m-d'),

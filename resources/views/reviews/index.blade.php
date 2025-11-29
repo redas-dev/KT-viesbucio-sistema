@@ -19,7 +19,11 @@
             <div class="card">
                 <div style="display: flex; justify-content: space-between; align-items: start;">
                     <div>
-                        <h3>{{ $review->user->name }} {{ $review->user->surname }}</h3>
+                        @if($review->username == null)
+                            <h3>{{ $review->user->name }} {{ $review->user->surname }}</h3>
+                        @else
+                            <h3>{{$review->username}}</h3>
+                        @endif
                         <p style="margin: 0.5rem 0;">
                             @for($i = 0; $i < $review->rating; $i++)
                                 <i class="fas fa-star" style="color: #FFD700;"></i>
