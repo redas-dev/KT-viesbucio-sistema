@@ -184,7 +184,7 @@ class ReservationController extends Controller
                 'room_number' => $room->room_number,
                 'price_per_night' => $room->price_per_night,
                 'features' => $room->room_features,
-            ])
+            ])->values()
         ]);
     }
 }
