@@ -31,11 +31,11 @@ class Room extends Model
         $conflicts = $this->reservations()
             ->where('reservation_status', ReservationStatus::Active->value)
             ->where(function ($query) use ($arrival_date, $departure_date) {
-                $query->whereBetween('arrival_data', [$arrival_date, $departure_date])
-                    ->orWhereBetween('departure_data', [$arrival_date, $departure_date])
+                $query->whereBetween('arrival_date', [$arrival_date, $departure_date])
+                    ->orWhereBetween('departure_date', [$arrival_date, $departure_date])
                     ->orWhere(function ($q) use ($arrival_date, $departure_date) {
-                        $q->where('arrival_data', '<=', $arrival_date)
-                            ->where('departure_data', '>=', $departure_date);
+                        $q->where('arrival_date', '<=', $arrival_date)
+                            ->where('departure_date', '>=', $departure_date);
                     });
             })
             ->count();

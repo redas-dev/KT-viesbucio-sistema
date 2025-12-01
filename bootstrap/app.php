@@ -20,6 +20,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'role_or_permission' => RoleOrPermissionMiddleware::class,
         ]);
     })
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->append(App\Http\Middleware\CorsMiddleware::class);
+    })
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
